@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>mellow.meltx</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#fff8f3;color:#493b35}
+header{padding:28px 20px;text-align:center;background:#f5ddd0}
+h1{margin:0;font-size:38px}
+header p{margin:7px 0;color:#806b61}
+.wrap{max-width:760px;margin:auto;padding:22px}
+.card{background:white;border-radius:24px;padding:22px;box-shadow:0 5px 18px #0000000d}
+.price{font-size:28px;font-weight:bold;margin:8px 0 18px}
+label{display:block;margin:13px 0 7px;font-weight:bold}
+input,select,textarea{width:100%;padding:13px;border:1px solid #ead9d0;border-radius:12px;font-size:16px}
+.toppings{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.toppings label{font-weight:normal;margin:0;padding:12px;border:1px solid #ead9d0;border-radius:12px}
+.toppings input{width:auto;margin-right:7px}
+.total{font-size:22px;font-weight:bold;text-align:right;margin:20px 0}
+button{width:100%;border:0;border-radius:14px;padding:15px;font-size:18px;font-weight:bold;background:#b98572;color:white}
+#success{display:none;background:#edf7e9;padding:16px;border-radius:14px;margin-top:15px}
+</style>
+</head>
+
+<body>
+<header>
+<h1>mellow.meltx</h1>
+<p>Greek Yogurt • creamy • fresh • happy</p>
+</header>
+
+<div class="wrap">
+<div class="card">
+<h2>🥣 Greek Yogurt</h2>
+<div class="price">29฿ / scoop</div>
+
+<form id="orderForm">
+
+<label>จำนวนสกูป</label>
+<select id="scoops">
+<option value="1">1 สกูป</option>
+<option value="2">2 สกูป</option>
+<option value="3">3 สกูป</option>
+<option value="4">4 สกูป</option>
+<option value="5">5 สกูป</option>
+</select>
+
+<label>เลือกท็อปปิ้ง (อย่างละ 10฿)</label>
+
+<div class="toppings">
+<label><input type="checkbox" class="topping" value="องุ่น">🍇 องุ่น +10฿</label>
+<label><input type="checkbox" class="topping" value="กล้วย">🍌 กล้วย +10฿</label>
+<label><input type="checkbox" class="topping" value="ส้ม">🍊 ส้ม +10฿</label>
+<label><input type="checkbox" class="topping" value="คอนเฟลก">🥣 คอนเฟลก +10฿</label>
+<label><input type="checkbox" class="topping" value="โอริโอ้">🍪 โอริโอ้ +10฿</label>
+</div>
+
+<div class="total">
+รวม: <span id="total">29</span>฿
+</div>
+
+<label>ชื่อลูกค้า</label>
+<input id="name" required placeholder="ชื่อเล่น">
+
+<label>ช่องทางติดต่อ</label>
+<input id="contact" required placeholder="เช่น IG / Line / เบอร์โทร">
+
+<label>หมายเหตุ</label>
+<textarea id="note" rows="3" placeholder="เช่น นัดรับที่..."></textarea>
+
+<button type="submit">🛒 ยืนยันออเดอร์</button>
+
+<div id="success"></div>
+
+</form>
+</div>
+</div>
+
+<script>
+
+const WEB_APP_URL =
+"https://script.google.com/macros/s/AKfycbxqcyNYNO16Bjz7-2FI68cYLJBo9vxLZK3FMj_M09eEfdDomHIYkzHb-yqPkmeqpiZN/exec";
+
+const scoops = document.getElementById("scoops");
+const toppings = document.querySelectorAll(".topping");
+const total = document.getElementById("total");
+
+function updatePrice(){
+
+let scoopPrice = Number(scoops.value) * 29;
+let toppingPrice = document.querySelectorAll(".topping:checked").length * 10;
+
+total.textContent = scoopPrice + toppingPrice;
+
+}
+
+scoops.addEventListener("change", updatePrice);
+
+toppings.forEach(function(topping){
+topping.addEventListener("change", updatePrice);
+});
+
+document.getElementById("orderForm").addEventListener("submit", async function(e){
+
+e.preventDefault();
+
+const selectedToppings =
+[...document.querySelectorAll(".topping:checked")]
+.map(x => x.value);
+
+const order = {
+
+name: document.getElementById("name").value,
+
+scoops: Number(scoops.value),
+
+toppings: selectedToppings.join(", ") || "ไม่เลือก",
+
+total: Number(total.textContent),
+
+contact: document.getElementById("contact").value,
+
+note: document.getElementById("note").value || "-"
+
+};
+
+const success = document.getElementById("success");
+
+success.style.display = "block";
+success.innerHTML = "กำลังส่งออเดอร์... ⏳";
+
+try{
+
+await fetch(WEB_APP_URL,{
+
+method:"POST",
+
+mode:"no-cors",
+
+headers:{
+"Content-Type":"text/plain;charset=utf-8"
+},
+
+body:JSON.stringify(order)
+
+});
+
+success.innerHTML =
+"<b>รับออเดอร์แล้ว! 🎉</b><br>" +
+"ยอดรวม <strong>" + order.total + "฿</strong><br>" +
+"ส่งออเดอร์เข้า Google Sheets แล้ว 💗";
+
+this.reset();
+
+updatePrice();
+
+}
+
+catch(error){
+
+success.innerHTML =
+"<b>ส่งออเดอร์ไม่สำเร็จ 😭</b><br>ลองใหม่อีกครั้ง";
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
