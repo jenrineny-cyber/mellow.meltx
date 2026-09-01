@@ -14,28 +14,25 @@
 
 body{
   margin:0;
-  font-family:Arial,"Noto Sans Thai",sans-serif;
-  background:linear-gradient(135deg,#fff8f3,#f8eee8);
+  font-family:Arial,sans-serif;
+  background:#fff8f3;
   color:#493b35;
 }
 
 header{
+  padding:28px 20px;
   text-align:center;
-  padding:35px 20px 30px;
-  background:linear-gradient(135deg,#f7ded2,#f2cfc0);
-  border-radius:0 0 35px 35px;
+  background:#f5ddd0;
 }
 
-header h1{
+h1{
   margin:0;
-  font-size:42px;
-  color:#684b40;
+  font-size:38px;
 }
 
 header p{
-  margin:8px 0 0;
-  color:#8b6d61;
-  font-size:16px;
+  margin:7px 0;
+  color:#806b61;
 }
 
 .wrap{
@@ -46,47 +43,30 @@ header p{
 
 .card{
   background:white;
-  border-radius:28px;
-  padding:25px;
-  box-shadow:0 8px 30px rgba(100,70,50,.12);
-}
-
-h2{
-  margin-top:0;
-  text-align:center;
+  border-radius:24px;
+  padding:22px;
+  box-shadow:0 5px 18px #0000000d;
 }
 
 .price{
-  text-align:center;
   font-size:28px;
   font-weight:bold;
-  color:#a86f5c;
-  margin-bottom:25px;
+  margin:8px 0 18px;
 }
 
-label.title{
+label{
   display:block;
-  margin:18px 0 9px;
+  margin:13px 0 7px;
   font-weight:bold;
-  font-size:17px;
 }
 
-select,
 input,
 textarea{
   width:100%;
   padding:13px;
   border:1px solid #ead9d0;
-  border-radius:14px;
+  border-radius:12px;
   font-size:16px;
-  background:#fffdfb;
-  outline:none;
-}
-
-select:focus,
-input:focus,
-textarea:focus{
-  border-color:#c99582;
 }
 
 /* TOPPINGS */
@@ -94,125 +74,107 @@ textarea:focus{
 .toppings{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:12px;
+  gap:10px;
 }
 
-.topping-card{
+.topping{
   border:1px solid #ead9d0;
-  border-radius:18px;
+  border-radius:14px;
   padding:12px;
-  background:#fffaf7;
   text-align:center;
-  transition:.2s;
-}
-
-.topping-card:hover{
-  transform:translateY(-2px);
-  box-shadow:0 5px 15px rgba(100,70,50,.08);
-}
-
-.topping-img{
-  width:70px;
-  height:70px;
-  object-fit:cover;
-  border-radius:50%;
-  display:block;
-  margin:0 auto 7px;
+  background:#fff;
 }
 
 .topping-name{
   font-weight:bold;
-  margin-bottom:8px;
+  margin-bottom:9px;
 }
 
-.counter{
+/* ปุ่มเพิ่มลด */
+
+.quantity{
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   gap:10px;
 }
 
-.counter button{
+.quantity button{
   width:34px;
   height:34px;
-  padding:0;
+  border:none;
   border-radius:50%;
-  background:#e8c1b1;
-  color:#5e4035;
-  font-size:20px;
+  background:#f5ddd0;
+  color:#493b35;
+  font-size:22px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
-.counter span{
-  min-width:22px;
+.quantity span{
+  min-width:25px;
   text-align:center;
+  font-size:18px;
   font-weight:bold;
-  font-size:17px;
 }
 
 /* TOTAL */
 
-.total-box{
-  margin-top:25px;
-  padding:18px;
-  background:#fff2eb;
-  border-radius:18px;
-  text-align:center;
-}
-
-.total-title{
-  font-size:15px;
-  color:#80665c;
-}
-
 .total{
-  font-size:32px;
+  font-size:22px;
   font-weight:bold;
-  color:#a86f5c;
-  margin-top:4px;
+  text-align:right;
+  margin:20px 0;
 }
 
-/* SUBMIT */
-
-.submit-btn{
+button.submit{
   width:100%;
   border:0;
-  border-radius:16px;
-  padding:16px;
-  margin-top:20px;
-  font-size:19px;
+  border-radius:14px;
+  padding:15px;
+  font-size:18px;
   font-weight:bold;
-  background:linear-gradient(135deg,#bd8975,#a86f5c);
+  background:#b98572;
   color:white;
   cursor:pointer;
-  transition:.2s;
-}
-
-.submit-btn:hover{
-  transform:translateY(-2px);
 }
 
 #success{
   display:none;
+  background:#edf7e9;
+  padding:16px;
+  border-radius:14px;
   margin-top:15px;
-  padding:17px;
-  border-radius:15px;
-  background:#edf8e8;
-  color:#52734a;
-  text-align:center;
 }
 
-@media(max-width:550px){
+/* MOBILE */
 
-  .toppings{
-    grid-template-columns:1fr 1fr;
+@media(max-width:500px){
+
+  header{
+    padding:22px 15px;
   }
 
-  header h1{
-    font-size:34px;
+  h1{
+    font-size:32px;
+  }
+
+  .wrap{
+    padding:12px;
   }
 
   .card{
-    padding:18px;
+    padding:16px;
+    border-radius:20px;
+  }
+
+  .toppings{
+    grid-template-columns:repeat(2,1fr);
+    gap:8px;
+  }
+
+  .topping{
+    padding:10px 5px;
   }
 
 }
@@ -226,7 +188,9 @@ textarea:focus{
 
 <h1>mellow.meltx</h1>
 
-<p>🥣 Greek Yogurt • creamy • fresh • happy</p>
+<p>
+Greek Yogurt • creamy • fresh • happy
+</p>
 
 </header>
 
@@ -245,11 +209,20 @@ textarea:focus{
 <form id="orderForm">
 
 
-<label class="title">
+<!-- จำนวนสกูป -->
+
+<label>
 จำนวนสกูป
 </label>
 
-<select id="scoops">
+<select id="scoops"
+style="
+width:100%;
+padding:13px;
+border:1px solid #ead9d0;
+border-radius:12px;
+font-size:16px;
+">
 
 <option value="1">1 สกูป</option>
 <option value="2">2 สกูป</option>
@@ -260,13 +233,11 @@ textarea:focus{
 </select>
 
 
-<label class="title">
-เลือกท็อปปิ้ง 🥰
-</label>
+<!-- TOPPINGS -->
 
-<p style="font-size:14px;color:#8b746b;">
-ท็อปปิ้งอย่างละ 10฿ • กด + เพื่อเพิ่มได้มากกว่า 1
-</p>
+<label>
+เลือกท็อปปิ้ง (อย่างละ 10฿)
+</label>
 
 
 <div class="toppings">
@@ -274,24 +245,27 @@ textarea:focus{
 
 <!-- องุ่น -->
 
-<div class="topping-card">
-
-<img
-class="topping-img"
-src="https://images.unsplash.com/photo-1537640538966-79f369143f8f?auto=format&fit=crop&w=200&q=80"
-alt="องุ่น">
+<div class="topping">
 
 <div class="topping-name">
 🍇 องุ่น
 </div>
 
-<div class="counter">
+<div class="quantity">
 
-<button type="button" onclick="changeTopping('องุ่น',-1)">−</button>
+<button type="button"
+onclick="changeQty('องุ่น',-1)">
+−
+</button>
 
-<span id="count-องุ่น">0</span>
+<span id="qty-องุ่น">
+0
+</span>
 
-<button type="button" onclick="changeTopping('องุ่น',1)">+</button>
+<button type="button"
+onclick="changeQty('องุ่น',1)">
++
+</button>
 
 </div>
 
@@ -300,24 +274,27 @@ alt="องุ่น">
 
 <!-- กล้วย -->
 
-<div class="topping-card">
-
-<img
-class="topping-img"
-src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=200&q=80"
-alt="กล้วย">
+<div class="topping">
 
 <div class="topping-name">
 🍌 กล้วย
 </div>
 
-<div class="counter">
+<div class="quantity">
 
-<button type="button" onclick="changeTopping('กล้วย',-1)">−</button>
+<button type="button"
+onclick="changeQty('กล้วย',-1)">
+−
+</button>
 
-<span id="count-กล้วย">0</span>
+<span id="qty-กล้วย">
+0
+</span>
 
-<button type="button" onclick="changeTopping('กล้วย',1)">+</button>
+<button type="button"
+onclick="changeQty('กล้วย',1)">
++
+</button>
 
 </div>
 
@@ -326,24 +303,27 @@ alt="กล้วย">
 
 <!-- ส้ม -->
 
-<div class="topping-card">
-
-<img
-class="topping-img"
-src="https://images.unsplash.com/photo-1547514701-42782101795e?auto=format&fit=crop&w=200&q=80"
-alt="ส้ม">
+<div class="topping">
 
 <div class="topping-name">
 🍊 ส้ม
 </div>
 
-<div class="counter">
+<div class="quantity">
 
-<button type="button" onclick="changeTopping('ส้ม',-1)">−</button>
+<button type="button"
+onclick="changeQty('ส้ม',-1)">
+−
+</button>
 
-<span id="count-ส้ม">0</span>
+<span id="qty-ส้ม">
+0
+</span>
 
-<button type="button" onclick="changeTopping('ส้ม',1)">+</button>
+<button type="button"
+onclick="changeQty('ส้ม',1)">
++
+</button>
 
 </div>
 
@@ -352,24 +332,27 @@ alt="ส้ม">
 
 <!-- คอนเฟลก -->
 
-<div class="topping-card">
-
-<img
-class="topping-img"
-src="https://images.unsplash.com/photo-1517093157656-b9eccef91cb1?auto=format&fit=crop&w=200&q=80"
-alt="คอนเฟลก">
+<div class="topping">
 
 <div class="topping-name">
 🥣 คอนเฟลก
 </div>
 
-<div class="counter">
+<div class="quantity">
 
-<button type="button" onclick="changeTopping('คอนเฟลก',-1)">−</button>
+<button type="button"
+onclick="changeQty('คอนเฟลก',-1)">
+−
+</button>
 
-<span id="count-คอนเฟลก">0</span>
+<span id="qty-คอนเฟลก">
+0
+</span>
 
-<button type="button" onclick="changeTopping('คอนเฟลก',1)">+</button>
+<button type="button"
+onclick="changeQty('คอนเฟลก',1)">
++
+</button>
 
 </div>
 
@@ -378,24 +361,27 @@ alt="คอนเฟลก">
 
 <!-- โอริโอ้ -->
 
-<div class="topping-card">
-
-<img
-class="topping-img"
-src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&q=80"
-alt="โอริโอ้">
+<div class="topping">
 
 <div class="topping-name">
 🍪 โอริโอ้
 </div>
 
-<div class="counter">
+<div class="quantity">
 
-<button type="button" onclick="changeTopping('โอริโอ้',-1)">−</button>
+<button type="button"
+onclick="changeQty('โอริโอ้',-1)">
+−
+</button>
 
-<span id="count-โอริโอ้">0</span>
+<span id="qty-โอริโอ้">
+0
+</span>
 
-<button type="button" onclick="changeTopping('โอริโอ้',1)">+</button>
+<button type="button"
+onclick="changeQty('โอริโอ้',1)">
++
+</button>
 
 </div>
 
@@ -404,24 +390,27 @@ alt="โอริโอ้">
 
 <!-- บลูเบอร์รี่ -->
 
-<div class="topping-card">
-
-<img
-class="topping-img"
-src="https://images.unsplash.com/photo-1498557850523-fd3d118b962e?auto=format&fit=crop&w=200&q=80"
-alt="บลูเบอร์รี่">
+<div class="topping">
 
 <div class="topping-name">
 🫐 บลูเบอร์รี่
 </div>
 
-<div class="counter">
+<div class="quantity">
 
-<button type="button" onclick="changeTopping('บลูเบอร์รี่',-1)">−</button>
+<button type="button"
+onclick="changeQty('บลูเบอร์รี่',-1)">
+−
+</button>
 
-<span id="count-บลูเบอร์รี่">0</span>
+<span id="qty-บลูเบอร์รี่">
+0
+</span>
 
-<button type="button" onclick="changeTopping('บลูเบอร์รี่',1)">+</button>
+<button type="button"
+onclick="changeQty('บลูเบอร์รี่',1)">
++
+</button>
 
 </div>
 
@@ -433,52 +422,62 @@ alt="บลูเบอร์รี่">
 
 <!-- TOTAL -->
 
-<div class="total-box">
-
-<div class="total-title">
-ยอดรวมทั้งหมด
-</div>
-
 <div class="total">
-<span id="total">29</span>฿
-</div>
+
+รวม:
+<span id="total">
+29
+</span>
+฿
 
 </div>
 
 
-<label class="title">
+<!-- NAME -->
+
+<label>
 ชื่อลูกค้า
 </label>
 
 <input
 id="name"
 required
-placeholder="ชื่อเล่น">
+placeholder="ชื่อเล่น"
+>
 
 
-<label class="title">
+<!-- CONTACT -->
+
+<label>
 ช่องทางติดต่อ
 </label>
 
 <input
 id="contact"
 required
-placeholder="เช่น IG / Line / เบอร์โทร">
+placeholder="เช่น IG / Line / เบอร์โทร"
+>
 
 
-<label class="title">
+<!-- NOTE -->
+
+<label>
 หมายเหตุ
 </label>
 
 <textarea
 id="note"
 rows="3"
-placeholder="เช่น นัดรับที่..."></textarea>
+placeholder="เช่น นัดรับที่..."
+></textarea>
 
+
+<!-- SUBMIT -->
 
 <button
-class="submit-btn"
-type="submit">
+class="submit"
+type="submit"
+>
 
 🛒 ยืนยันออเดอร์
 
@@ -499,7 +498,7 @@ type="submit">
 
 
 /* =========================
-   URL GOOGLE APPS SCRIPT
+   URL GOOGLE SHEETS
 ========================= */
 
 const WEB_APP_URL =
@@ -507,47 +506,60 @@ const WEB_APP_URL =
 
 
 /* =========================
-   ราคาท็อปปิ้ง
-========================= */
-
-const TOPPING_PRICE = 10;
-
-const SCOOP_PRICE = 29;
-
-
-/* =========================
    จำนวนท็อปปิ้ง
 ========================= */
 
-const toppingCounts = {
+let toppingQty = {
 
   "องุ่น":0,
+
   "กล้วย":0,
+
   "ส้ม":0,
+
   "คอนเฟลก":0,
+
   "โอริโอ้":0,
+
   "บลูเบอร์รี่":0
 
 };
 
 
 /* =========================
+   จำนวนสกูป
+========================= */
+
+const scoops =
+document.getElementById("scoops");
+
+
+/* =========================
    เพิ่ม / ลด ท็อปปิ้ง
 ========================= */
 
-function changeTopping(name, amount){
+function changeQty(name,amount){
 
-  toppingCounts[name] += amount;
+  toppingQty[name] =
+    toppingQty[name] + amount;
 
-  if(toppingCounts[name] < 0){
 
-    toppingCounts[name] = 0;
+  /* ห้ามติดลบ */
+
+  if(toppingQty[name] < 0){
+
+    toppingQty[name] = 0;
 
   }
 
+
+  /* แสดงจำนวน */
+
   document.getElementById(
-    "count-" + name
-  ).textContent = toppingCounts[name];
+    "qty-" + name
+  ).textContent =
+    toppingQty[name];
+
 
   updatePrice();
 
@@ -560,21 +572,39 @@ function changeTopping(name, amount){
 
 function updatePrice(){
 
-  const scoops =
-    Number(document.getElementById("scoops").value);
+  /* ราคาสกูป */
 
-  let toppingTotal = 0;
+  let scoopPrice =
+    Number(scoops.value) * 29;
 
-  Object.values(toppingCounts).forEach(function(count){
 
-    toppingTotal += count * TOPPING_PRICE;
+  /* จำนวนท็อปปิ้งทั้งหมด */
 
-  });
+  let toppingCount = 0;
 
-  const total =
-    (scoops * SCOOP_PRICE) + toppingTotal;
 
-  document.getElementById("total").textContent = total;
+  Object.values(toppingQty)
+    .forEach(function(qty){
+
+      toppingCount += qty;
+
+    });
+
+
+  /* ท็อปปิ้ง 10 บาท / จำนวน */
+
+  let toppingPrice =
+    toppingCount * 10;
+
+
+  /* ราคาสุทธิ */
+
+  let finalPrice =
+    scoopPrice + toppingPrice;
+
+
+  document.getElementById("total")
+    .textContent = finalPrice;
 
 }
 
@@ -583,9 +613,49 @@ function updatePrice(){
    เปลี่ยนจำนวนสกูป
 ========================= */
 
-document
-.getElementById("scoops")
-.addEventListener("change", updatePrice);
+scoops.addEventListener(
+  "change",
+  updatePrice
+);
+
+
+/* =========================
+   สร้างข้อความท็อปปิ้ง
+========================= */
+
+function getToppings(){
+
+  let result = [];
+
+
+  Object.keys(toppingQty)
+    .forEach(function(name){
+
+      let qty =
+        toppingQty[name];
+
+
+      if(qty > 0){
+
+        result.push(
+          name + " " + qty
+        );
+
+      }
+
+    });
+
+
+  if(result.length === 0){
+
+    return "ไม่เลือก";
+
+  }
+
+
+  return result.join(", ");
+
+}
 
 
 /* =========================
@@ -594,81 +664,61 @@ document
 
 document
 .getElementById("orderForm")
-.addEventListener("submit", async function(e){
+.addEventListener(
+"submit",
+async function(e){
 
   e.preventDefault();
 
 
-  const name =
-    document.getElementById("name").value;
-
-  const contact =
-    document.getElementById("contact").value;
-
-  const note =
-    document.getElementById("note").value || "-";
-
-
-  const scoops =
-    Number(document.getElementById("scoops").value);
-
-
-  /* สร้างรายการท็อปปิ้ง */
-
-  const toppingList = [];
-
-  Object.entries(toppingCounts).forEach(
-    function([name,count]){
-
-      if(count > 0){
-
-        toppingList.push(
-          name + " " + count
-        );
-
-      }
-
-    }
-  );
-
-
-  const toppings =
-    toppingList.length > 0
-      ? toppingList.join(", ")
-      : "ไม่เลือก";
-
-
-  const order = {
-
-    name:name,
-
-    scoops:scoops,
-
-    toppings:toppings,
-
-    total:Number(
-      document.getElementById("total").textContent
-    ),
-
-    contact:contact,
-
-    note:note
-
-  };
-
-
   const success =
-    document.getElementById("success");
+    document.getElementById(
+      "success"
+    );
 
 
-  success.style.display = "block";
+  success.style.display =
+    "block";
+
 
   success.innerHTML =
     "กำลังส่งออเดอร์... ⏳";
 
 
-  try{
+  const order = {
 
+    name:
+      document.getElementById(
+        "name"
+      ).value,
+
+    scoops:
+      Number(scoops.value),
+
+    toppings:
+      getToppings(),
+
+    total:
+      Number(
+        document.getElementById(
+          "total"
+        ).textContent
+      ),
+
+    contact:
+      document.getElementById(
+        "contact"
+      ).value,
+
+    note:
+      document.getElementById(
+        "note"
+      ).value || "-"
+
+  };
+
+
+  try{
 
     await fetch(
       WEB_APP_URL,
@@ -680,10 +730,11 @@ document
 
         headers:{
           "Content-Type":
-          "text/plain;charset=utf-8"
+            "text/plain;charset=utf-8"
         },
 
-        body:JSON.stringify(order)
+        body:
+          JSON.stringify(order)
 
       }
     );
@@ -697,30 +748,29 @@ document
       "ส่งออเดอร์เข้า Google Sheets แล้ว 💗";
 
 
-    /* รีเซ็ตฟอร์ม */
+    /* =====================
+       RESET
+    ===================== */
 
     this.reset();
 
 
-    /* รีเซ็ตจำนวนท็อปปิ้ง */
+    Object.keys(toppingQty)
+      .forEach(function(name){
 
-    Object.keys(toppingCounts).forEach(
-      function(name){
-
-        toppingCounts[name] = 0;
+        toppingQty[name] = 0;
 
         document.getElementById(
-          "count-" + name
+          "qty-" + name
         ).textContent = 0;
 
-      }
-    );
+      });
 
 
     updatePrice();
 
-
   }
+
 
   catch(error){
 
@@ -732,6 +782,10 @@ document
 
 });
 
+
+/* เริ่มต้น */
+
+updatePrice();
 
 </script>
 
