@@ -163,7 +163,6 @@ margin-top:15px;
 <option value="5">5 สกูป</option>
 </select>
 
-
 <label>เลือกท็อปปิ้ง (อย่างละ 10฿)</label>
 
 <div class="toppings">
@@ -213,25 +212,29 @@ margin-top:15px;
 </div>
 </div>
 
+<div class="topping-row">
+<span class="topping-name">🫐 บลูเบอร์รี่</span>
+<div class="qty">
+<button type="button" onclick="changeQty('บลูเบอร์รี่',-1)">−</button>
+<span id="qty-บลูเบอร์รี่">0</span>
+<button type="button" onclick="changeQty('บลูเบอร์รี่',1)">+</button>
+</div>
 </div>
 
+</div>
 
 <div class="total">
 รวม: <span id="total">29</span>฿
 </div>
 
-
 <label>ชื่อลูกค้า</label>
 <input id="name" required placeholder="ชื่อเล่น">
-
 
 <label>ช่องทางติดต่อ</label>
 <input id="contact" required placeholder="เช่น IG / Line / เบอร์โทร">
 
-
 <label>หมายเหตุ</label>
 <textarea id="note" rows="3" placeholder="เช่น นัดรับที่..."></textarea>
-
 
 <button class="order-btn" type="submit">
 🛒 ยืนยันออเดอร์
@@ -243,25 +246,22 @@ margin-top:15px;
 </div>
 </div>
 
-
 <script>
 
 const WEB_APP_URL =
 "https://script.google.com/macros/s/AKfycbxqcyNYNO16Bjz7-2FI68cYLJBo9vxLZK3FMj_M09eEfdDomHIYkzHb-yqPkmeqpiZN/exec";
-
 
 const toppingQty = {
 "องุ่น":0,
 "กล้วย":0,
 "ส้ม":0,
 "คอนเฟลก":0,
-"โอริโอ้":0
+"โอริโอ้":0,
+"บลูเบอร์รี่":0
 };
-
 
 const scoops = document.getElementById("scoops");
 const total = document.getElementById("total");
-
 
 function changeQty(name, amount){
 
@@ -274,7 +274,6 @@ toppingQty[name];
 updatePrice();
 
 }
-
 
 function updatePrice(){
 
@@ -293,18 +292,15 @@ scoopPrice + toppingPrice;
 
 }
 
-
 scoops.addEventListener(
 "change",
 updatePrice
 );
 
-
 document.getElementById("orderForm")
 .addEventListener("submit", async function(e){
 
 e.preventDefault();
-
 
 const selectedToppings =
 
@@ -315,7 +311,6 @@ Object.entries(toppingQty)
 .map(([name,qty]) => name + " " + qty)
 
 .join(", ") || "ไม่เลือก";
-
 
 const order = {
 
@@ -339,16 +334,13 @@ document.getElementById("note").value || "-"
 
 };
 
-
 const success =
 document.getElementById("success");
-
 
 success.style.display = "block";
 
 success.innerHTML =
 "กำลังส่งออเดอร์... ⏳";
-
 
 try{
 
@@ -366,7 +358,6 @@ JSON.stringify(order)
 }
 );
 
-
 success.innerHTML =
 "<b>รับออเดอร์แล้ว! 🎉</b><br>" +
 "ยอดรวม <strong>" +
@@ -374,9 +365,7 @@ order.total +
 "฿</strong><br>" +
 "ส่งออเดอร์เข้า Google Sheets แล้ว 💗";
 
-
 this.reset();
-
 
 Object.keys(toppingQty).forEach(name => {
 
@@ -388,9 +377,7 @@ document.getElementById(
 
 });
 
-
 updatePrice();
-
 
 }
 
