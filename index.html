@@ -7,14 +7,13 @@
 <title>mellow.meltx</title>
 
 <style>
-
 *{
   box-sizing:border-box;
 }
 
 body{
   margin:0;
-  font-family:Arial,sans-serif;
+  font-family:Arial,"Noto Sans Thai",sans-serif;
   background:#fff8f3;
   color:#493b35;
 }
@@ -61,12 +60,14 @@ label{
 }
 
 input,
+select,
 textarea{
   width:100%;
   padding:13px;
   border:1px solid #ead9d0;
   border-radius:12px;
   font-size:16px;
+  font-family:inherit;
 }
 
 /* TOPPINGS */
@@ -78,16 +79,17 @@ textarea{
 }
 
 .topping{
+  background:#fff;
   border:1px solid #ead9d0;
   border-radius:14px;
-  padding:12px;
+  padding:14px 8px;
   text-align:center;
-  background:#fff;
 }
 
 .topping-name{
+  font-size:17px;
   font-weight:bold;
-  margin-bottom:9px;
+  margin-bottom:10px;
 }
 
 /* ปุ่มเพิ่มลด */
@@ -102,7 +104,8 @@ textarea{
 .quantity button{
   width:34px;
   height:34px;
-  border:none;
+  padding:0;
+  border:0;
   border-radius:50%;
   background:#f5ddd0;
   color:#493b35;
@@ -127,7 +130,7 @@ textarea{
   margin:20px 0;
 }
 
-button.submit{
+.submit{
   width:100%;
   border:0;
   border-radius:14px;
@@ -145,9 +148,11 @@ button.submit{
   padding:16px;
   border-radius:14px;
   margin-top:15px;
+  text-align:center;
+  line-height:1.7;
 }
 
-/* MOBILE */
+/* โทรศัพท์ */
 
 @media(max-width:500px){
 
@@ -159,6 +164,10 @@ button.submit{
     font-size:32px;
   }
 
+  header p{
+    font-size:14px;
+  }
+
   .wrap{
     padding:12px;
   }
@@ -168,29 +177,46 @@ button.submit{
     border-radius:20px;
   }
 
+  .price{
+    font-size:25px;
+  }
+
   .toppings{
     grid-template-columns:repeat(2,1fr);
     gap:8px;
   }
 
   .topping{
-    padding:10px 5px;
+    padding:12px 5px;
+  }
+
+  .topping-name{
+    font-size:15px;
+  }
+
+  .quantity{
+    gap:7px;
+  }
+
+  .quantity button{
+    width:32px;
+    height:32px;
   }
 
 }
-
 </style>
 </head>
+
 
 <body>
 
 <header>
 
-<h1>mellow.meltx</h1>
+  <h1>mellow.meltx</h1>
 
-<p>
-Greek Yogurt • creamy • fresh • happy
-</p>
+  <p>
+    Greek Yogurt • creamy • fresh • happy
+  </p>
 
 </header>
 
@@ -215,25 +241,32 @@ Greek Yogurt • creamy • fresh • happy
 จำนวนสกูป
 </label>
 
-<select id="scoops"
-style="
-width:100%;
-padding:13px;
-border:1px solid #ead9d0;
-border-radius:12px;
-font-size:16px;
-">
+<select id="scoops">
 
-<option value="1">1 สกูป</option>
-<option value="2">2 สกูป</option>
-<option value="3">3 สกูป</option>
-<option value="4">4 สกูป</option>
-<option value="5">5 สกูป</option>
+<option value="1">
+1 สกูป
+</option>
+
+<option value="2">
+2 สกูป
+</option>
+
+<option value="3">
+3 สกูป
+</option>
+
+<option value="4">
+4 สกูป
+</option>
+
+<option value="5">
+5 สกูป
+</option>
 
 </select>
 
 
-<!-- TOPPINGS -->
+<!-- ท็อปปิ้ง -->
 
 <label>
 เลือกท็อปปิ้ง (อย่างละ 10฿)
@@ -253,8 +286,10 @@ font-size:16px;
 
 <div class="quantity">
 
-<button type="button"
-onclick="changeQty('องุ่น',-1)">
+<button
+type="button"
+onclick="changeQty('องุ่น',-1)"
+>
 −
 </button>
 
@@ -262,8 +297,10 @@ onclick="changeQty('องุ่น',-1)">
 0
 </span>
 
-<button type="button"
-onclick="changeQty('องุ่น',1)">
+<button
+type="button"
+onclick="changeQty('องุ่น',1)"
+>
 +
 </button>
 
@@ -282,8 +319,10 @@ onclick="changeQty('องุ่น',1)">
 
 <div class="quantity">
 
-<button type="button"
-onclick="changeQty('กล้วย',-1)">
+<button
+type="button"
+onclick="changeQty('กล้วย',-1)"
+>
 −
 </button>
 
@@ -291,8 +330,10 @@ onclick="changeQty('กล้วย',-1)">
 0
 </span>
 
-<button type="button"
-onclick="changeQty('กล้วย',1)">
+<button
+type="button"
+onclick="changeQty('กล้วย',1)"
+>
 +
 </button>
 
@@ -311,8 +352,10 @@ onclick="changeQty('กล้วย',1)">
 
 <div class="quantity">
 
-<button type="button"
-onclick="changeQty('ส้ม',-1)">
+<button
+type="button"
+onclick="changeQty('ส้ม',-1)"
+>
 −
 </button>
 
@@ -320,8 +363,10 @@ onclick="changeQty('ส้ม',-1)">
 0
 </span>
 
-<button type="button"
-onclick="changeQty('ส้ม',1)">
+<button
+type="button"
+onclick="changeQty('ส้ม',1)"
+>
 +
 </button>
 
@@ -340,8 +385,10 @@ onclick="changeQty('ส้ม',1)">
 
 <div class="quantity">
 
-<button type="button"
-onclick="changeQty('คอนเฟลก',-1)">
+<button
+type="button"
+onclick="changeQty('คอนเฟลก',-1)"
+>
 −
 </button>
 
@@ -349,8 +396,10 @@ onclick="changeQty('คอนเฟลก',-1)">
 0
 </span>
 
-<button type="button"
-onclick="changeQty('คอนเฟลก',1)">
+<button
+type="button"
+onclick="changeQty('คอนเฟลก',1)"
+>
 +
 </button>
 
@@ -369,8 +418,10 @@ onclick="changeQty('คอนเฟลก',1)">
 
 <div class="quantity">
 
-<button type="button"
-onclick="changeQty('โอริโอ้',-1)">
+<button
+type="button"
+onclick="changeQty('โอริโอ้',-1)"
+>
 −
 </button>
 
@@ -378,8 +429,10 @@ onclick="changeQty('โอริโอ้',-1)">
 0
 </span>
 
-<button type="button"
-onclick="changeQty('โอริโอ้',1)">
+<button
+type="button"
+onclick="changeQty('โอริโอ้',1)"
+>
 +
 </button>
 
@@ -398,8 +451,10 @@ onclick="changeQty('โอริโอ้',1)">
 
 <div class="quantity">
 
-<button type="button"
-onclick="changeQty('บลูเบอร์รี่',-1)">
+<button
+type="button"
+onclick="changeQty('บลูเบอร์รี่',-1)"
+>
 −
 </button>
 
@@ -407,8 +462,10 @@ onclick="changeQty('บลูเบอร์รี่',-1)">
 0
 </span>
 
-<button type="button"
-onclick="changeQty('บลูเบอร์รี่',1)">
+<button
+type="button"
+onclick="changeQty('บลูเบอร์รี่',1)"
+>
 +
 </button>
 
@@ -420,7 +477,7 @@ onclick="changeQty('บลูเบอร์รี่',1)">
 </div>
 
 
-<!-- TOTAL -->
+<!-- ราคารวม -->
 
 <div class="total">
 
@@ -433,7 +490,7 @@ onclick="changeQty('บลูเบอร์รี่',1)">
 </div>
 
 
-<!-- NAME -->
+<!-- ชื่อลูกค้า -->
 
 <label>
 ชื่อลูกค้า
@@ -446,7 +503,7 @@ placeholder="ชื่อเล่น"
 >
 
 
-<!-- CONTACT -->
+<!-- ช่องทางติดต่อ -->
 
 <label>
 ช่องทางติดต่อ
@@ -459,7 +516,7 @@ placeholder="เช่น IG / Line / เบอร์โทร"
 >
 
 
-<!-- NOTE -->
+<!-- หมายเหตุ -->
 
 <label>
 หมายเหตุ
@@ -472,15 +529,13 @@ placeholder="เช่น นัดรับที่..."
 ></textarea>
 
 
-<!-- SUBMIT -->
+<!-- ปุ่มสั่ง -->
 
 <button
 class="submit"
 type="submit"
 >
-
 🛒 ยืนยันออเดอร์
-
 </button>
 
 
@@ -511,17 +566,17 @@ const WEB_APP_URL =
 
 let toppingQty = {
 
-  "องุ่น":0,
+  "องุ่น": 0,
 
-  "กล้วย":0,
+  "กล้วย": 0,
 
-  "ส้ม":0,
+  "ส้ม": 0,
 
-  "คอนเฟลก":0,
+  "คอนเฟลก": 0,
 
-  "โอริโอ้":0,
+  "โอริโอ้": 0,
 
-  "บลูเบอร์รี่":0
+  "บลูเบอร์รี่": 0
 
 };
 
@@ -535,10 +590,10 @@ document.getElementById("scoops");
 
 
 /* =========================
-   เพิ่ม / ลด ท็อปปิ้ง
+   เพิ่ม / ลดท็อปปิ้ง
 ========================= */
 
-function changeQty(name,amount){
+function changeQty(name, amount){
 
   toppingQty[name] =
     toppingQty[name] + amount;
@@ -578,7 +633,7 @@ function updatePrice(){
     Number(scoops.value) * 29;
 
 
-  /* จำนวนท็อปปิ้งทั้งหมด */
+  /* นับจำนวนท็อปปิ้ง */
 
   let toppingCount = 0;
 
@@ -591,20 +646,22 @@ function updatePrice(){
     });
 
 
-  /* ท็อปปิ้ง 10 บาท / จำนวน */
+  /* ท็อปปิ้งชิ้นละ 10 */
 
   let toppingPrice =
     toppingCount * 10;
 
 
-  /* ราคาสุทธิ */
+  /* รวม */
 
   let finalPrice =
     scoopPrice + toppingPrice;
 
 
-  document.getElementById("total")
-    .textContent = finalPrice;
+  document.getElementById(
+    "total"
+  ).textContent =
+    finalPrice;
 
 }
 
@@ -665,112 +722,111 @@ function getToppings(){
 document
 .getElementById("orderForm")
 .addEventListener(
-"submit",
-async function(e){
+  "submit",
+  async function(e){
 
-  e.preventDefault();
-
-
-  const success =
-    document.getElementById(
-      "success"
-    );
+    e.preventDefault();
 
 
-  success.style.display =
-    "block";
-
-
-  success.innerHTML =
-    "กำลังส่งออเดอร์... ⏳";
-
-
-  const order = {
-
-    name:
+    const success =
       document.getElementById(
-        "name"
-      ).value,
-
-    scoops:
-      Number(scoops.value),
-
-    toppings:
-      getToppings(),
-
-    total:
-      Number(
-        document.getElementById(
-          "total"
-        ).textContent
-      ),
-
-    contact:
-      document.getElementById(
-        "contact"
-      ).value,
-
-    note:
-      document.getElementById(
-        "note"
-      ).value || "-"
-
-  };
+        "success"
+      );
 
 
-  try{
-
-    await fetch(
-      WEB_APP_URL,
-      {
-
-        method:"POST",
-
-        mode:"no-cors",
-
-        headers:{
-          "Content-Type":
-            "text/plain;charset=utf-8"
-        },
-
-        body:
-          JSON.stringify(order)
-
-      }
-    );
+    success.style.display =
+      "block";
 
 
     success.innerHTML =
-      "<b>รับออเดอร์แล้ว! 🎉</b><br>" +
-      "ยอดรวม <strong>" +
-      order.total +
-      "฿</strong><br>" +
-      "ส่งออเดอร์เข้า Google Sheets แล้ว 💗";
+      "กำลังส่งออเดอร์... ⏳";
 
 
-    /* =====================
-       RESET
-    ===================== */
+    const order = {
 
-    this.reset();
-
-
-    Object.keys(toppingQty)
-      .forEach(function(name){
-
-        toppingQty[name] = 0;
-
+      name:
         document.getElementById(
-          "qty-" + name
-        ).textContent = 0;
+          "name"
+        ).value,
 
-      });
+      scoops:
+        Number(scoops.value),
+
+      toppings:
+        getToppings(),
+
+      total:
+        Number(
+          document.getElementById(
+            "total"
+          ).textContent
+        ),
+
+      contact:
+        document.getElementById(
+          "contact"
+        ).value,
+
+      note:
+        document.getElementById(
+          "note"
+        ).value || "-"
+
+    };
 
 
-    updatePrice();
+    try{
+
+      await fetch(
+        WEB_APP_URL,
+        {
+
+          method:"POST",
+
+          mode:"no-cors",
+
+          headers:{
+            "Content-Type":
+              "text/plain;charset=utf-8"
+          },
+
+          body:
+            JSON.stringify(order)
+
+        }
+      );
+
+
+      success.innerHTML =
+        "<b>รับออเดอร์แล้ว! 🎉</b><br>" +
+        "ยอดรวม <strong>" +
+        order.total +
+        "฿</strong><br>" +
+        "ส่งออเดอร์เข้า Google Sheets แล้ว 💗";
+
+
+      /* รีเซ็ตฟอร์ม */
+
+      this.reset();
+
+
+      /* รีเซ็ตจำนวนท็อปปิ้ง */
+
+      Object.keys(toppingQty)
+        .forEach(function(name){
+
+          toppingQty[name] = 0;
+
+          document.getElementById(
+            "qty-" + name
+          ).textContent = 0;
+
+        });
+
+
+      updatePrice();
 
   }
-
 
   catch(error){
 
@@ -783,7 +839,7 @@ async function(e){
 });
 
 
-/* เริ่มต้น */
+/* ราคาเริ่มต้น */
 
 updatePrice();
 
