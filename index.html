@@ -13,289 +13,257 @@
 
 body{
   margin:0;
+  background:#fff8f5;
+  color:#3f2c25;
   font-family:Arial,"Noto Sans Thai",sans-serif;
-  background:#fff8f4;
-  color:#4d342a;
 }
 
-/* HEADER */
 header{
-  background:#fffdfb;
+  background:#fff;
+  padding:20px 16px 12px;
   text-align:center;
-  padding:25px 15px 20px;
-  border-bottom:1px solid #f5e2d9;
+  position:sticky;
+  top:0;
+  z-index:10;
+  box-shadow:0 2px 12px #00000008;
 }
 
 .logo{
-  font-size:34px;
-  font-weight:bold;
-  color:#583528;
-  letter-spacing:1px;
+  font-size:36px;
+  font-weight:700;
+  color:#4a281b;
 }
 
 .subtitle{
-  margin-top:5px;
-  color:#a47b6c;
+  margin-top:4px;
+  color:#b98779;
   font-size:15px;
 }
 
-/* HERO */
-.hero{
-  max-width:900px;
+.container{
+  width:100%;
+  max-width:700px;
   margin:auto;
-  min-height:260px;
-  padding:35px 30px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-  background:linear-gradient(110deg,#fff8ee,#fce9df);
-  border-radius:0 0 35px 35px;
+  padding:14px;
 }
 
-.hero-text{
-  flex:1;
+/* HERO */
+
+.hero{
+  background:linear-gradient(135deg,#fff0e7,#ffe4dc);
+  border-radius:24px;
+  padding:25px 20px;
+  margin-bottom:16px;
+  overflow:hidden;
 }
 
 .hero h1{
-  font-size:38px;
-  margin:0 0 12px;
+  margin:0 0 8px;
+  font-size:34px;
 }
 
 .hero p{
-  font-size:17px;
+  font-size:16px;
   line-height:1.6;
-  margin:0 0 18px;
+  margin:0 0 15px;
 }
 
 .hero-price{
   display:inline-block;
-  background:white;
-  color:#dc6870;
-  padding:12px 24px;
+  background:#fff;
+  padding:10px 20px;
   border-radius:30px;
+  color:#ed5265;
   font-size:25px;
   font-weight:bold;
-  box-shadow:0 5px 18px #00000010;
+  box-shadow:0 4px 15px #0000000c;
 }
 
-.hero-img{
-  width:250px;
-  height:210px;
-  object-fit:cover;
-  border-radius:30px;
-  box-shadow:0 10px 25px #00000018;
-}
-
-/* MAIN */
-.container{
-  max-width:900px;
-  margin:25px auto;
-  padding:0 15px;
-}
+/* CARD */
 
 .card{
-  background:white;
-  border-radius:30px;
-  padding:25px;
-  box-shadow:0 8px 30px #0000000d;
+  background:#fff;
+  border-radius:24px;
+  padding:18px;
+  margin-bottom:16px;
+  box-shadow:0 4px 18px #00000008;
 }
 
 .section-title{
-  font-size:22px;
+  font-size:21px;
   font-weight:bold;
-  margin:5px 0 15px;
+  margin-bottom:14px;
 }
 
 /* SCOOPS */
-.scoops{
+
+.scoop-grid{
   display:grid;
   grid-template-columns:repeat(5,1fr);
-  gap:9px;
+  gap:7px;
 }
 
-.scoop-btn{
-  border:2px solid #f1ddd5;
-  background:white;
-  color:#4d342a;
-  border-radius:16px;
-  padding:14px 5px;
-  font-size:16px;
+.scoop{
+  border:1.5px solid #f0dcd5;
+  background:#fff;
+  border-radius:14px;
+  padding:12px 4px;
+  text-align:center;
   cursor:pointer;
+  font-size:14px;
+}
+
+.scoop.active{
+  border-color:#ef6171;
+  background:#fff0f2;
+  color:#ed5265;
   font-weight:bold;
 }
 
-.scoop-btn.active{
-  background:#fff0ec;
-  border-color:#ef9290;
-  color:#d75e66;
-}
+/* TOPPINGS */
 
-/* TOPPING */
-.topping-info{
-  color:#9b7b6d;
-  font-size:14px;
-  margin-bottom:15px;
-}
-
-.toppings{
+.topping-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:12px;
 }
 
 .topping{
-  border:1px solid #f0ded7;
+  border:1.5px solid #f1ded8;
   border-radius:20px;
-  padding:12px;
-  display:flex;
-  align-items:center;
-  gap:12px;
-  background:#fffdfc;
+  padding:10px;
+  background:#fff;
+  text-align:center;
 }
 
 .topping-img{
-  width:75px;
-  height:75px;
-  border-radius:50%;
+  width:100%;
+  height:120px;
   object-fit:cover;
-  flex-shrink:0;
-}
-
-.topping-content{
-  flex:1;
+  border-radius:15px;
+  display:block;
+  margin-bottom:8px;
 }
 
 .topping-name{
-  font-size:18px;
+  font-size:17px;
   font-weight:bold;
   margin-bottom:8px;
 }
 
-.counter{
+.qty{
   display:flex;
   align-items:center;
+  justify-content:center;
   gap:7px;
 }
 
-.counter button{
+.qty button{
   width:34px;
   height:34px;
-  border:none;
-  border-radius:50%;
-  background:#ffe0da;
-  color:#b45c59;
-  font-size:22px;
-  cursor:pointer;
   padding:0;
+  border:0;
+  border-radius:50%;
+  background:#ffe0df;
+  color:#e94e62;
+  font-size:21px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
-.counter span{
-  min-width:25px;
-  text-align:center;
-  font-weight:bold;
+.qty span{
+  width:25px;
   font-size:17px;
+  font-weight:bold;
 }
 
 /* TOTAL */
+
 .total-box{
-  margin-top:22px;
-  background:#fff0ed;
-  border:1px solid #ffd5cd;
-  border-radius:20px;
-  padding:17px 20px;
+  background:#fff0f2;
+  border-radius:18px;
+  padding:16px;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  margin-top:16px;
 }
 
 .total-label{
-  font-size:20px;
+  color:#df5062;
+  font-size:18px;
   font-weight:bold;
-  color:#d45d65;
 }
 
 .total-price{
-  font-size:34px;
+  color:#e94f63;
+  font-size:30px;
   font-weight:bold;
-  color:#d45d65;
 }
 
 /* FORM */
-.form-title{
-  margin-top:25px;
-  margin-bottom:15px;
-  font-size:22px;
-  font-weight:bold;
-}
 
 label{
   display:block;
-  margin:12px 0 6px;
+  margin:13px 0 7px;
   font-weight:bold;
 }
 
 input,
 textarea{
   width:100%;
-  border:1px solid #eadbd5;
-  border-radius:14px;
-  padding:14px;
+  border:1.5px solid #eadbd5;
+  border-radius:13px;
+  padding:13px;
   font-size:16px;
-  background:#fffdfc;
   outline:none;
+  font-family:inherit;
 }
 
 input:focus,
 textarea:focus{
-  border-color:#e89991;
+  border-color:#ee7180;
 }
 
-/* BUTTON */
-.submit{
+.order-btn{
   width:100%;
-  margin-top:20px;
   border:0;
-  border-radius:16px;
-  padding:17px;
-  background:linear-gradient(135deg,#e8757d,#d95e69);
+  border-radius:15px;
+  padding:16px;
+  margin-top:18px;
+  background:linear-gradient(90deg,#ee5367,#ed6879);
   color:white;
-  font-size:20px;
+  font-size:19px;
   font-weight:bold;
   cursor:pointer;
-  box-shadow:0 6px 15px #df777733;
 }
 
-.submit:active{
-  transform:scale(.98);
+.info{
+  margin-top:10px;
+  padding:12px;
+  border-radius:13px;
+  background:#f4f7e9;
+  text-align:center;
+  font-size:13px;
+  color:#526047;
 }
 
-/* SUCCESS */
 #success{
   display:none;
-  margin-top:15px;
-  padding:17px;
-  text-align:center;
+  margin-top:14px;
+  padding:15px;
+  border-radius:14px;
   background:#edf8e9;
-  color:#55754d;
-  border-radius:15px;
+  text-align:center;
   line-height:1.7;
 }
 
-/* FOOTER */
-.footer{
-  text-align:center;
-  font-size:13px;
-  color:#a58c82;
-  padding:25px 10px 35px;
-}
-
-
 /* MOBILE */
-@media(max-width:600px){
+
+@media(max-width:500px){
 
   header{
-    padding:20px 12px 16px;
+    padding:15px 10px 10px;
   }
 
   .logo{
@@ -306,122 +274,95 @@ textarea:focus{
     font-size:13px;
   }
 
-  .hero{
-    padding:25px 18px;
-    min-height:auto;
-    display:block;
-    text-align:center;
-    border-radius:0 0 28px 28px;
-  }
-
-  .hero h1{
-    font-size:30px;
-  }
-
-  .hero p{
-    font-size:15px;
-  }
-
-  .hero-price{
-    font-size:23px;
-    margin-bottom:18px;
-  }
-
-  .hero-img{
-    width:100%;
-    height:190px;
-    border-radius:24px;
-  }
-
   .container{
-    padding:0 10px;
-    margin-top:15px;
-  }
-
-  .card{
-    padding:17px;
-    border-radius:24px;
-  }
-
-  .section-title{
-    font-size:20px;
-  }
-
-  .scoops{
-    gap:6px;
-  }
-
-  .scoop-btn{
-    padding:12px 3px;
-    font-size:14px;
-  }
-
-  .toppings{
-    grid-template-columns:1fr;
-    gap:10px;
-  }
-
-  .topping{
     padding:10px;
   }
 
+  .hero{
+    padding:22px 17px;
+    border-radius:21px;
+  }
+
+  .hero h1{
+    font-size:29px;
+  }
+
+  .hero p{
+    font-size:14px;
+  }
+
+  .hero-price{
+    font-size:22px;
+  }
+
+  .card{
+    padding:14px;
+    border-radius:20px;
+  }
+
+  .section-title{
+    font-size:19px;
+  }
+
+  .scoop-grid{
+    gap:5px;
+  }
+
+  .scoop{
+    padding:11px 2px;
+    font-size:12px;
+  }
+
+  .topping-grid{
+    gap:9px;
+  }
+
+  .topping{
+    padding:8px;
+    border-radius:17px;
+  }
+
   .topping-img{
-    width:70px;
-    height:70px;
+    height:100px;
+    border-radius:13px;
   }
 
   .topping-name{
-    font-size:17px;
+    font-size:15px;
   }
 
-  .counter button{
-    width:38px;
-    height:38px;
-  }
-
-  .total-box{
-    padding:15px;
-  }
-
-  .total-label{
-    font-size:18px;
+  .qty button{
+    width:31px;
+    height:31px;
   }
 
   .total-price{
-    font-size:30px;
+    font-size:27px;
   }
-
 }
 </style>
 </head>
 
-
 <body>
 
 <header>
-
-  <div class="logo">
-    mellow.meltx ♡
-  </div>
-
+  <div class="logo">mellow.meltx ♡</div>
   <div class="subtitle">
     Greek Yogurt • creamy • fresh • happy
   </div>
-
 </header>
 
+<div class="container">
 
-<section class="hero">
+  <!-- HERO -->
 
-  <div class="hero-text">
+  <div class="hero">
 
-    <h1>
-      Greek Yogurt ♡
-    </h1>
+    <h1>Greek Yogurt ♡</h1>
 
     <p>
       อร่อยสดชื่น ได้ประโยชน์<br>
-      เลือกท็อปปิ้งได้ตามใจ 🥰
+      เลือกท็อปปิ้งได้ตามใจเลย 🫐
     </p>
 
     <div class="hero-price">
@@ -431,374 +372,329 @@ textarea:focus{
   </div>
 
 
-  <img
-    class="hero-img"
-    src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=600&q=80"
-    alt="Greek Yogurt">
+  <!-- SCOOPS -->
 
-</section>
+  <div class="card">
 
+    <div class="section-title">
+      🥣 1. เลือกจำนวนสกูป
+    </div>
 
+    <div class="scoop-grid">
 
-<div class="container">
+      <div class="scoop active" data-scoop="1">
+        1 สกูป
+      </div>
 
-<div class="card">
+      <div class="scoop" data-scoop="2">
+        2 สกูป
+      </div>
 
+      <div class="scoop" data-scoop="3">
+        3 สกูป
+      </div>
 
-<!-- SCOOP -->
+      <div class="scoop" data-scoop="4">
+        4 สกูป
+      </div>
 
-<div class="section-title">
-  🥣 1. เลือกจำนวนสกูป
-</div>
+      <div class="scoop" data-scoop="5">
+        5 สกูป
+      </div>
 
-<div class="scoops">
+    </div>
 
-  <button class="scoop-btn active"
-  type="button"
-  onclick="selectScoop(1,this)">
-    1 สกูป
-  </button>
+  </div>
 
-  <button class="scoop-btn"
-  type="button"
-  onclick="selectScoop(2,this)">
-    2 สกูป
-  </button>
 
-  <button class="scoop-btn"
-  type="button"
-  onclick="selectScoop(3,this)">
-    3 สกูป
-  </button>
+  <!-- TOPPINGS -->
 
-  <button class="scoop-btn"
-  type="button"
-  onclick="selectScoop(4,this)">
-    4 สกูป
-  </button>
+  <div class="card">
 
-  <button class="scoop-btn"
-  type="button"
-  onclick="selectScoop(5,this)">
-    5 สกูป
-  </button>
+    <div class="section-title">
+      🍓 2. เลือกท็อปปิ้ง
+      <small style="font-size:13px;font-weight:normal;">
+        (อย่างละ 10฿)
+      </small>
+    </div>
 
-</div>
+    <div class="topping-grid">
 
 
+      <!-- องุ่น -->
 
-<!-- TOPPING -->
+      <div class="topping">
 
-<div class="section-title" style="margin-top:28px;">
-  🍓 2. เลือกท็อปปิ้ง
-</div>
+        <img
+          class="topping-img"
+          src="https://images.unsplash.com/photo-1599819177626-2e1c7f9e0b5d?auto=format&fit=crop&w=500&q=85"
+          alt="องุ่น"
+        >
 
-<div class="topping-info">
-  อย่างละ 10฿ • กด + เพิ่มได้มากกว่า 1
-</div>
+        <div class="topping-name">
+          🍇 องุ่น
+        </div>
 
+        <div class="qty">
 
-<div class="toppings">
+          <button onclick="changeQty('องุ่น',-1)">
+            −
+          </button>
 
+          <span id="qty-องุ่น">0</span>
 
-<!-- GRAPE -->
+          <button onclick="changeQty('องุ่น',1)">
+            +
+          </button>
 
-<div class="topping">
+        </div>
 
-<img
-class="topping-img"
-src="https://images.unsplash.com/photo-1537640538966-79f369143f8f?auto=format&fit=crop&w=200&q=80">
+      </div>
 
-<div class="topping-content">
 
-<div class="topping-name">
-  🍇 องุ่น
-</div>
+      <!-- กล้วย -->
 
-<div class="counter">
+      <div class="topping">
 
-<button type="button"
-onclick="changeTopping('องุ่น',-1)">
-−
-</button>
+        <img
+          class="topping-img"
+          src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=500&q=85"
+          alt="กล้วย"
+        >
 
-<span id="องุ่น">0</span>
+        <div class="topping-name">
+          🍌 กล้วย
+        </div>
 
-<button type="button"
-onclick="changeTopping('องุ่น',1)">
-+
-</button>
+        <div class="qty">
 
-</div>
+          <button onclick="changeQty('กล้วย',-1)">
+            −
+          </button>
 
-</div>
-</div>
+          <span id="qty-กล้วย">0</span>
 
+          <button onclick="changeQty('กล้วย',1)">
+            +
+          </button>
 
+        </div>
 
-<!-- BANANA -->
+      </div>
 
-<div class="topping">
 
-<img
-class="topping-img"
-src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=200&q=80">
+      <!-- ส้ม -->
 
-<div class="topping-content">
+      <div class="topping">
 
-<div class="topping-name">
-  🍌 กล้วย
-</div>
+        <img
+          class="topping-img"
+          src="https://images.unsplash.com/photo-1547514701-42782101795e?auto=format&fit=crop&w=500&q=85"
+          alt="ส้ม"
+        >
 
-<div class="counter">
+        <div class="topping-name">
+          🍊 ส้ม
+        </div>
 
-<button type="button"
-onclick="changeTopping('กล้วย',-1)">
-−
-</button>
+        <div class="qty">
 
-<span id="กล้วย">0</span>
+          <button onclick="changeQty('ส้ม',-1)">
+            −
+          </button>
 
-<button type="button"
-onclick="changeTopping('กล้วย',1)">
-+
-</button>
+          <span id="qty-ส้ม">0</span>
 
-</div>
+          <button onclick="changeQty('ส้ม',1)">
+            +
+          </button>
 
-</div>
-</div>
+        </div>
 
+      </div>
 
 
-<!-- ORANGE -->
+      <!-- คอนเฟลก -->
 
-<div class="topping">
+      <div class="topping">
 
-<img
-class="topping-img"
-src="https://images.unsplash.com/photo-1547514701-42782101795e?auto=format&fit=crop&w=200&q=80">
+        <img
+          class="topping-img"
+          src="https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?auto=format&fit=crop&w=500&q=85"
+          alt="คอนเฟลก"
+        >
 
-<div class="topping-content">
+        <div class="topping-name">
+          🥣 คอนเฟลก
+        </div>
 
-<div class="topping-name">
-  🍊 ส้ม
-</div>
+        <div class="qty">
 
-<div class="counter">
+          <button onclick="changeQty('คอนเฟลก',-1)">
+            −
+          </button>
 
-<button type="button"
-onclick="changeTopping('ส้ม',-1)">
-−
-</button>
+          <span id="qty-คอนเฟลก">0</span>
 
-<span id="ส้ม">0</span>
+          <button onclick="changeQty('คอนเฟลก',1)">
+            +
+          </button>
 
-<button type="button"
-onclick="changeTopping('ส้ม',1)">
-+
-</button>
+        </div>
 
-</div>
+      </div>
 
-</div>
-</div>
 
+      <!-- โอริโอ้ -->
 
+      <div class="topping">
 
-<!-- CORNFLAKES -->
+        <img
+          class="topping-img"
+          src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=500&q=85"
+          alt="โอริโอ้"
+        >
 
-<div class="topping">
+        <div class="topping-name">
+          🍪 โอริโอ้
+        </div>
 
-<img
-class="topping-img"
-src="https://images.unsplash.com/photo-1517093157656-b9eccef91cb1?auto=format&fit=crop&w=200&q=80">
+        <div class="qty">
 
-<div class="topping-content">
+          <button onclick="changeQty('โอริโอ้',-1)">
+            −
+          </button>
 
-<div class="topping-name">
-  🥣 คอนเฟลก
-</div>
+          <span id="qty-โอริโอ้">0</span>
 
-<div class="counter">
+          <button onclick="changeQty('โอริโอ้',1)">
+            +
+          </button>
 
-<button type="button"
-onclick="changeTopping('คอนเฟลก',-1)">
-−
-</button>
+        </div>
 
-<span id="คอนเฟลก">0</span>
+      </div>
 
-<button type="button"
-onclick="changeTopping('คอนเฟลก',1)">
-+
-</button>
 
-</div>
+      <!-- บลูเบอร์รี่ -->
 
-</div>
-</div>
+      <div class="topping">
 
+        <img
+          class="topping-img"
+          src="https://images.unsplash.com/photo-1498557850523-fd3d118b962e?auto=format&fit=crop&w=500&q=85"
+          alt="บลูเบอร์รี่"
+        >
 
+        <div class="topping-name">
+          🫐 บลูเบอร์รี่
+        </div>
 
-<!-- OREO -->
+        <div class="qty">
 
-<div class="topping">
+          <button onclick="changeQty('บลูเบอร์รี่',-1)">
+            −
+          </button>
 
-<img
-class="topping-img"
-src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=200&q=80">
+          <span id="qty-บลูเบอร์รี่">0</span>
 
-<div class="topping-content">
+          <button onclick="changeQty('บลูเบอร์รี่',1)">
+            +
+          </button>
 
-<div class="topping-name">
-  🍪 โอริโอ้
-</div>
+        </div>
 
-<div class="counter">
+      </div>
 
-<button type="button"
-onclick="changeTopping('โอริโอ้',-1)">
-−
-</button>
+    </div>
 
-<span id="โอริโอ้">0</span>
 
-<button type="button"
-onclick="changeTopping('โอริโอ้',1)">
-+
-</button>
+    <!-- TOTAL -->
 
-</div>
+    <div class="total-box">
 
-</div>
-</div>
+      <div class="total-label">
+        🥣 ยอดรวมทั้งหมด
+      </div>
 
+      <div class="total-price">
+        <span id="total">29</span>฿
+      </div>
 
+    </div>
 
-<!-- BLUEBERRY -->
+  </div>
 
-<div class="topping">
 
-<img
-class="topping-img"
-src="https://images.unsplash.com/photo-1498557850523-fd3d118b962e?auto=format&fit=crop&w=200&q=80">
+  <!-- CUSTOMER -->
 
-<div class="topping-content">
+  <div class="card">
 
-<div class="topping-name">
-  🫐 บลูเบอร์รี่
-</div>
+    <div class="section-title">
+      📝 3. ข้อมูลสำหรับการสั่งซื้อ
+    </div>
 
-<div class="counter">
+    <form id="orderForm">
 
-<button type="button"
-onclick="changeTopping('บลูเบอร์รี่',-1)">
-−
-</button>
+      <label>
+        ชื่อลูกค้า
+      </label>
 
-<span id="บลูเบอร์รี่">0</span>
+      <input
+        id="name"
+        required
+        placeholder="ชื่อเล่น"
+      >
 
-<button type="button"
-onclick="changeTopping('บลูเบอร์รี่',1)">
-+
-</button>
 
-</div>
+      <label>
+        ช่องทางติดต่อ
+      </label>
 
-</div>
-</div>
+      <input
+        id="contact"
+        required
+        placeholder="IG / Line / เบอร์โทร"
+      >
 
 
-</div>
+      <label>
+        หมายเหตุ
+      </label>
 
+      <textarea
+        id="note"
+        rows="3"
+        placeholder="เช่น นัดรับที่..."
+      ></textarea>
 
 
-<!-- TOTAL -->
+      <button
+        class="order-btn"
+        type="submit"
+      >
+        🛒 ยืนยันออเดอร์ ✨
+      </button>
 
-<div class="total-box">
 
-<div class="total-label">
-  🥣 ยอดรวมทั้งหมด
-</div>
+      <div class="info">
+        🛡️ เมื่อกดยืนยันออเดอร์
+        ระบบจะส่งออเดอร์เข้า Google Sheets อัตโนมัติ 💗
+      </div>
 
-<div class="total-price">
-  <span id="total">29</span>฿
-</div>
+      <div id="success"></div>
 
-</div>
+    </form>
 
-
-
-<!-- CUSTOMER -->
-
-<div class="form-title">
-  📝 3. ข้อมูลสำหรับการสั่งซื้อ
-</div>
-
-
-<label>
-ชื่อลูกค้า
-</label>
-
-<input
-id="name"
-required
-placeholder="ชื่อเล่น">
-
-
-
-<label>
-ช่องทางติดต่อ
-</label>
-
-<input
-id="contact"
-required
-placeholder="IG / Line / เบอร์โทร">
-
-
-
-<label>
-หมายเหตุ
-</label>
-
-<textarea
-id="note"
-rows="3"
-placeholder="เช่น นัดรับที่..."></textarea>
-
-
-
-<button
-class="submit"
-type="button"
-onclick="submitOrder()">
-
-🛒 ยืนยันออเดอร์ ✨
-
-</button>
-
-
-<div id="success"></div>
-
+  </div>
 
 </div>
-</div>
-
-
-<div class="footer">
-  ♡ mellow.meltx ♡<br>
-  Greek Yogurt made with love
-</div>
-
 
 
 <script>
 
-
 /* =========================
-   GOOGLE APPS SCRIPT
+   GOOGLE SHEETS WEB APP
 ========================= */
 
 const WEB_APP_URL =
@@ -806,81 +702,69 @@ const WEB_APP_URL =
 
 
 /* =========================
-   ราคา
-========================= */
-
-const SCOOP_PRICE = 29;
-const TOPPING_PRICE = 10;
-
-
-/* =========================
-   จำนวนสกูป
+   DATA
 ========================= */
 
 let selectedScoops = 1;
 
-
-/* =========================
-   จำนวนท็อปปิ้ง
-========================= */
-
-const toppings = {
+let toppingQty = {
 
   "องุ่น":0,
+
   "กล้วย":0,
+
   "ส้ม":0,
+
   "คอนเฟลก":0,
+
   "โอริโอ้":0,
+
   "บลูเบอร์รี่":0
 
 };
 
 
 /* =========================
-   เลือกสกูป
+   SCOOP SELECT
 ========================= */
 
-function selectScoop(number, button){
+document.querySelectorAll(".scoop").forEach(function(item){
 
-  selectedScoops = number;
+  item.addEventListener("click",function(){
 
+    document
+      .querySelectorAll(".scoop")
+      .forEach(function(x){
+        x.classList.remove("active");
+      });
 
-  document
-  .querySelectorAll(".scoop-btn")
-  .forEach(function(btn){
+    this.classList.add("active");
 
-    btn.classList.remove("active");
+    selectedScoops =
+      Number(this.dataset.scoop);
+
+    updatePrice();
 
   });
 
-
-  button.classList.add("active");
-
-
-  updatePrice();
-
-}
+});
 
 
 /* =========================
-   เพิ่ม / ลด ท็อปปิ้ง
+   TOPPING QUANTITY
 ========================= */
 
-function changeTopping(name, amount){
+function changeQty(name,amount){
 
-  toppings[name] += amount;
+  toppingQty[name] += amount;
 
-
-  if(toppings[name] < 0){
-
-    toppings[name] = 0;
-
+  if(toppingQty[name] < 0){
+    toppingQty[name] = 0;
   }
 
-
-  document.getElementById(name).textContent =
-    toppings[name];
-
+  document.getElementById(
+    "qty-" + name
+  ).textContent = toppingQty[name];
 
   updatePrice();
 
@@ -888,208 +772,188 @@ function changeTopping(name, amount){
 
 
 /* =========================
-   คำนวณราคา
+   PRICE
 ========================= */
 
 function updatePrice(){
 
+  let scoopPrice =
+    selectedScoops * 29;
+
   let toppingCount = 0;
 
+  Object.values(toppingQty)
+    .forEach(function(qty){
 
-  Object.values(toppings).forEach(function(count){
+      toppingCount += qty;
 
-    toppingCount += count;
+    });
 
-  });
+  let toppingPrice =
+    toppingCount * 10;
 
+  let finalPrice =
+    scoopPrice + toppingPrice;
 
-  const price =
-    (selectedScoops * SCOOP_PRICE) +
-    (toppingCount * TOPPING_PRICE);
-
-
-  document.getElementById("total").textContent =
-    price;
+  document.getElementById(
+    "total"
+  ).textContent = finalPrice;
 
 }
 
 
 /* =========================
-   ส่งออเดอร์
+   TOPPING TEXT
 ========================= */
 
-async function submitOrder(){
+function getToppingText(){
 
+  let result = [];
 
-  const name =
-    document.getElementById("name").value.trim();
+  Object.keys(toppingQty)
+    .forEach(function(name){
 
+      let qty = toppingQty[name];
 
-  const contact =
-    document.getElementById("contact").value.trim();
+      if(qty > 0){
 
-
-  const note =
-    document.getElementById("note").value.trim() || "-";
-
-
-  if(!name || !contact){
-
-    alert("กรุณากรอกชื่อและช่องทางติดต่อก่อนนะ 💗");
-
-    return;
-
-  }
-
-
-  /* สร้างรายการท็อปปิ้ง */
-
-  const toppingList = [];
-
-
-  Object.entries(toppings).forEach(
-    function([name,count]){
-
-      if(count > 0){
-
-        toppingList.push(
-          name + " " + count
+        result.push(
+          name + " " + qty
         );
 
       }
 
-    }
-  );
-
-
-  const toppingText =
-    toppingList.length > 0
-      ? toppingList.join(", ")
-      : "ไม่เลือก";
-
-
-  const total =
-    Number(
-      document.getElementById("total").textContent
-    );
-
-
-  const order = {
-
-    name:name,
-
-    scoops:selectedScoops,
-
-    toppings:toppingText,
-
-    total:total,
-
-    contact:contact,
-
-    note:note
-
-  };
-
-
-  const success =
-    document.getElementById("success");
-
-
-  success.style.display = "block";
-
-  success.innerHTML =
-    "กำลังส่งออเดอร์... ⏳";
-
-
-  try{
-
-
-    await fetch(
-
-      WEB_APP_URL,
-
-      {
-
-        method:"POST",
-
-        mode:"no-cors",
-
-        headers:{
-          "Content-Type":
-          "text/plain;charset=utf-8"
-        },
-
-        body:JSON.stringify(order)
-
-      }
-
-    );
-
-
-    success.innerHTML =
-
-      "<b>รับออเดอร์แล้ว! 🎉</b><br>" +
-
-      "ยอดรวม <strong>" +
-
-      total +
-
-      "฿</strong><br>" +
-
-      "ขอบคุณที่อุดหนุน mellow.meltx 💗";
-
-
-    /* รีเซ็ตข้อมูล */
-
-    document.getElementById("name").value = "";
-
-    document.getElementById("contact").value = "";
-
-    document.getElementById("note").value = "";
-
-
-    selectedScoops = 1;
-
-
-    document
-    .querySelectorAll(".scoop-btn")
-    .forEach(function(btn){
-
-      btn.classList.remove("active");
-
     });
 
-
-    document
-    .querySelector(".scoop-btn")
-    .classList.add("active");
-
-
-    Object.keys(toppings).forEach(function(name){
-
-      toppings[name] = 0;
-
-      document.getElementById(name).textContent = 0;
-
-    });
-
-
-    updatePrice();
-
-
+  if(result.length === 0){
+    return "ไม่เลือก";
   }
 
-  catch(error){
-
-    success.innerHTML =
-
-      "<b>ส่งออเดอร์ไม่สำเร็จ 😭</b><br>" +
-
-      "ลองใหม่อีกครั้งนะ";
-
-  }
+  return result.join(", ");
 
 }
+
+
+/* =========================
+   SUBMIT ORDER
+========================= */
+
+document
+  .getElementById("orderForm")
+  .addEventListener("submit",async function(e){
+
+    e.preventDefault();
+
+    const success =
+      document.getElementById("success");
+
+    success.style.display = "block";
+
+    success.innerHTML =
+      "กำลังส่งออเดอร์... ⏳";
+
+
+    const order = {
+
+      name:
+        document.getElementById("name").value,
+
+      scoops:
+        selectedScoops,
+
+      toppings:
+        getToppingText(),
+
+      total:
+        Number(
+          document.getElementById("total").textContent
+        ),
+
+      contact:
+        document.getElementById("contact").value,
+
+      note:
+        document.getElementById("note").value || "-"
+
+    };
+
+
+    try{
+
+      await fetch(
+        WEB_APP_URL,
+        {
+
+          method:"POST",
+
+          mode:"no-cors",
+
+          headers:{
+            "Content-Type":
+              "text/plain;charset=utf-8"
+          },
+
+          body:
+            JSON.stringify(order)
+
+        }
+      );
+
+
+      success.innerHTML =
+        "<b>รับออเดอร์แล้ว! 🎉</b><br>" +
+        "ยอดรวม <strong>" +
+        order.total +
+        "฿</strong><br>" +
+        "ส่งเข้า Google Sheets แล้ว 💗";
+
+
+      /* RESET */
+
+      this.reset();
+
+      selectedScoops = 1;
+
+      document
+        .querySelectorAll(".scoop")
+        .forEach(function(x){
+          x.classList.remove("active");
+        });
+
+      document
+        .querySelector('.scoop[data-scoop="1"]')
+        .classList.add("active");
+
+
+      Object.keys(toppingQty)
+        .forEach(function(name){
+
+          toppingQty[name] = 0;
+
+          document.getElementById(
+            "qty-" + name
+          ).textContent = 0;
+
+        });
+
+
+      updatePrice();
+
+    }
+
+
+    catch(error){
+
+      success.innerHTML =
+        "<b>ส่งออเดอร์ไม่สำเร็จ 😭</b><br>" +
+        "ลองใหม่อีกครั้ง";
+
+    }
+
+  });
+
+
+updatePrice();
 
 </script>
 
