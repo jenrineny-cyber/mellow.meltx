@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="th">
 <head>
@@ -7,6 +8,7 @@
 <title>mellow.meltx</title>
 
 <style>
+
 *{
   box-sizing:border-box;
 }
@@ -14,99 +16,168 @@
 body{
   margin:0;
   font-family:Arial,"Noto Sans Thai",sans-serif;
-  background:
-    radial-gradient(circle at 10% 15%, #ffdce8 0 18px, transparent 19px),
-    radial-gradient(circle at 90% 10%, #dcecff 0 22px, transparent 23px),
-    radial-gradient(circle at 8% 80%, #fff0b8 0 20px, transparent 21px),
-    radial-gradient(circle at 92% 75%, #e8d9ff 0 24px, transparent 25px),
-    radial-gradient(circle at 30% 45%, #ffe8ef 0 10px, transparent 11px),
-    radial-gradient(circle at 75% 50%, #e5f4ff 0 12px, transparent 13px),
-    radial-gradient(circle at 50% 90%, #fff2d9 0 15px, transparent 16px),
-    linear-gradient(135deg,#fff8f3 0%,#fff1f5 45%,#f5efff 100%);
-  background-attachment:fixed;
   color:#493b35;
+
+  background:
+    radial-gradient(circle at 5% 10%, #ffd9e6 0 14px, transparent 15px),
+    radial-gradient(circle at 95% 18%, #e1d5ff 0 18px, transparent 19px),
+    radial-gradient(circle at 7% 65%, #ffe8b8 0 16px, transparent 17px),
+    radial-gradient(circle at 94% 70%, #d9efff 0 17px, transparent 18px),
+    linear-gradient(135deg,#fff8f3,#fff0f5,#f7f1ff);
+
+  min-height:100vh;
 }
 
+
+/* HEADER */
+
 header{
-  padding:28px 20px;
+  padding:30px 20px 26px;
   text-align:center;
-  background:#f5ddd0;
+
+  background:
+    radial-gradient(circle at 15% 20%, #ffffffaa 0 5px, transparent 6px),
+    radial-gradient(circle at 85% 70%, #ffffff99 0 7px, transparent 8px),
+    #f5ddd0;
+
+  border-radius:0 0 32px 32px;
 }
 
 h1{
   margin:0;
   font-size:38px;
+  letter-spacing:.5px;
 }
 
 header p{
-  margin:7px 0;
+  margin:8px 0 0;
   color:#806b61;
+  font-size:15px;
 }
+
+
+/* WRAP */
 
 .wrap{
   max-width:760px;
   margin:auto;
-  padding:22px;
+  padding:22px 16px 30px;
 }
+
+
+/* CARD */
 
 .card{
   position:relative;
   overflow:hidden;
-  background:white;
-  border-radius:24px;
-  padding:22px;
-  box-shadow:0 5px 18px #0000000d;
+
+  background:#ffffffee;
+  border-radius:28px;
+
+  padding:24px;
+
+  box-shadow:
+    0 8px 25px #d6b8c733,
+    0 2px 8px #00000008;
 }
 
-/* ของตกแต่งด้านในการ์ด */
+
+/* ของตกแต่งด้านใน */
 
 .card::before{
-  content:"🍓  ✦  🫐  ♡  🍌";
+  content:"🍓   ✦   🫐   ♡   🍌";
   position:absolute;
-  top:8px;
+
+  top:9px;
   right:12px;
-  font-size:20px;
+
+  font-size:19px;
   opacity:.55;
+
   pointer-events:none;
 }
 
 .card::after{
-  content:"✦  🍊  ♡  ✨  🍇";
+  content:"♡   🍊   ✨   🍇   ♡";
   position:absolute;
-  bottom:8px;
+
+  bottom:10px;
   left:12px;
-  font-size:18px;
+
+  font-size:17px;
   opacity:.45;
+
   pointer-events:none;
 }
 
+
+/* หัวข้อ */
+
 .card h2{
   position:relative;
-  z-index:1;
+  z-index:2;
+
+  margin-top:5px;
+  color:#634d45;
 }
 
+
+/* PRICE */
+
 .price{
-  font-size:28px;
+  display:inline-block;
+
+  font-size:27px;
   font-weight:bold;
+
   margin:8px 0 18px;
+
+  background:#fff0f5;
+  padding:7px 14px;
+
+  border-radius:15px;
+
+  color:#9a6679;
 }
+
+
+/* LABEL */
 
 label{
   display:block;
-  margin:13px 0 7px;
+  margin:15px 0 7px;
   font-weight:bold;
+  color:#5c4941;
 }
+
+
+/* INPUT */
 
 input,
 select,
 textarea{
   width:100%;
+
   padding:13px;
+
   border:1px solid #ead9d0;
-  border-radius:12px;
+  border-radius:14px;
+
   font-size:16px;
   font-family:inherit;
+
+  background:#fffdfc;
+
+  outline:none;
 }
+
+input:focus,
+select:focus,
+textarea:focus{
+  border-color:#e4b7c8;
+  box-shadow:0 0 0 3px #ffeaf1;
+}
+
 
 /* TOPPINGS */
 
@@ -117,11 +188,16 @@ textarea{
 }
 
 .topping{
-  background:#fff;
+  background:#fffaf8;
+
   border:1px solid #ead9d0;
-  border-radius:14px;
+  border-radius:17px;
+
   padding:14px 8px;
+
   text-align:center;
+
+  box-shadow:0 3px 8px #00000006;
 }
 
 .topping-name{
@@ -130,72 +206,126 @@ textarea{
   margin-bottom:10px;
 }
 
-/* ปุ่มเพิ่มลด */
+
+/* QUANTITY */
 
 .quantity{
   display:flex;
+
   align-items:center;
   justify-content:center;
+
   gap:10px;
 }
 
 .quantity button{
   width:34px;
   height:34px;
+
   padding:0;
+
   border:0;
   border-radius:50%;
-  background:#f5ddd0;
-  color:#493b35;
+
+  background:#f7dce6;
+  color:#684d57;
+
   font-size:22px;
   font-weight:bold;
+
   cursor:pointer;
+
+  transition:.15s;
+}
+
+.quantity button:active{
+  transform:scale(.9);
 }
 
 .quantity span{
   min-width:25px;
+
   text-align:center;
+
   font-size:18px;
   font-weight:bold;
 }
+
 
 /* TOTAL */
 
 .total{
   font-size:22px;
   font-weight:bold;
+
   text-align:right;
-  margin:20px 0;
+
+  margin:22px 0;
+
+  padding:13px 15px;
+
+  background:#fff5d9;
+
+  border-radius:16px;
+
+  color:#604b3e;
 }
+
+
+/* SUBMIT */
 
 .submit{
   width:100%;
+
   border:0;
-  border-radius:14px;
-  padding:15px;
+  border-radius:16px;
+
+  padding:16px;
+
   font-size:18px;
   font-weight:bold;
-  background:#b98572;
+
+  background:#c58ca0;
   color:white;
+
   cursor:pointer;
+
+  box-shadow:0 5px 12px #c58ca044;
+
+  transition:.15s;
 }
+
+.submit:active{
+  transform:scale(.98);
+}
+
+
+/* SUCCESS */
 
 #success{
   display:none;
+
   background:#edf7e9;
+
   padding:16px;
-  border-radius:14px;
+
+  border-radius:15px;
+
   margin-top:15px;
+
   text-align:center;
+
   line-height:1.7;
 }
+
 
 /* โทรศัพท์ */
 
 @media(max-width:500px){
 
   header{
-    padding:22px 15px;
+    padding:23px 15px 22px;
+    border-radius:0 0 26px 26px;
   }
 
   h1{
@@ -207,24 +337,24 @@ textarea{
   }
 
   .wrap{
-    padding:12px;
+    padding:12px 10px 25px;
   }
 
   .card{
-    padding:16px;
-    border-radius:20px;
+    padding:17px 15px;
+    border-radius:23px;
   }
 
   .card::before{
-    font-size:15px;
-    top:6px;
+    top:7px;
     right:8px;
+    font-size:14px;
   }
 
   .card::after{
-    font-size:14px;
-    bottom:6px;
+    bottom:7px;
     left:8px;
+    font-size:13px;
   }
 
   .price{
@@ -238,6 +368,7 @@ textarea{
 
   .topping{
     padding:12px 5px;
+    border-radius:15px;
   }
 
   .topping-name{
@@ -254,6 +385,7 @@ textarea{
   }
 
 }
+
 </style>
 </head>
 
@@ -566,17 +698,27 @@ placeholder="เช่น IG / Line / เบอร์โทร"
 >
 
 
-<!-- หมายเหตุ -->
+<!-- จุดนัดรับ -->
 
 <label>
-หมายเหตุ
+จุดนัดรับ
 </label>
 
-<textarea
-id="note"
-rows="3"
-placeholder="เช่น นัดรับที่..."
-></textarea>
+<select id="note" required>
+
+<option value="">
+เลือกจุดนัดรับ
+</option>
+
+<option value="ห้อง 3/12">
+🏫 ห้อง 3/12
+</option>
+
+<option value="ใต้อาคาร 5">
+🏢 ใต้อาคาร 5
+</option>
+
+</select>
 
 
 <!-- ปุ่มสั่ง -->
@@ -820,7 +962,7 @@ document
       note:
         document.getElementById(
           "note"
-        ).value || "-"
+        ).value
 
     };
 
@@ -897,3 +1039,4 @@ updatePrice();
 
 </body>
 </html>
+```
